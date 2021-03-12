@@ -3,7 +3,7 @@ const prisma = new PrismaClient();
 
 
 module.exports = {
-    getCategory : (req, res) => {
+    getDiscus : (req, res) => {
         prisma.diskusi.findMany()
         .then((data) => {
             res.send({
@@ -22,7 +22,7 @@ module.exports = {
     },
 
 
-    addcategory: (req, res) => {
+    addDiscus: (req, res) => {
         const { body } = req;
         const newData = {
           ...body,
