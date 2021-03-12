@@ -1,0 +1,22 @@
+{
+  "name": "bookbismillah",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@prisma/client": "^2.18.0",
+    "brcypt": "^1.0.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "prisma": "^2.18.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "author": "coco",
+  "license": "ISC"
+}

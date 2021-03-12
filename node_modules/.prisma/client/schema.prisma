@@ -1,0 +1,55 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+model user{
+  id       Int    @id @default(autoincrement())
+  nama     String @db.VarChar(100)
+  username String @db.VarChar(50)
+  email    String @db.VarChar(100)
+  password String
+}
+
+
+model book {
+  id_buku   Int    @id @default(autoincrement())
+  judul     String @db.VarChar(200)
+  pengarang String @db.VarChar(100)
+  penerbit  String @db.VarChar(100)
+  ISBN      String @db.VarChar(20)
+  deskripsi String @db.Text
+  halaman   Int    @db.Integer
+  foto      String @db.Text
+}
+
+model kategori {
+  id_kategori Int    @id @default(autoincrement())
+  kategori    String @db.VarChar(100)
+  foto        String @db.Text
+}
+
+model pemijaman {
+  id_pinjam   Int      @id @default(autoincrement())
+  tgl_pinjam  DateTime @db.Date
+  tgl_kembali DateTime @db.Date
+  status      Boolean?
+}
+
+model rating {
+  id_rating Int @id @default(autoincrement())
+  rating    Int
+}
+
+model diskusi {
+  id_diskusi Int    @id @default(autoincrement())
+  diskusi    String @db.Text
+}
