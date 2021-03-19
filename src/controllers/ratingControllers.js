@@ -1,7 +1,6 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
-
 module.exports = {
     getRating : (req, res) => {
         prisma.rating.findMany()
@@ -90,7 +89,6 @@ module.exports = {
         });
         console.log(data);
         })
-    
         .catch((err) => {
             req.send({
             msg: "eror",

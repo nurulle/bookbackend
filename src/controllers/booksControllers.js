@@ -58,8 +58,6 @@ module.exports = {
         console.log(err);
         });
     },
-
-
     updateBooks: (req, res) =>{
         const { id } = req.params;
         const { body } = req;
@@ -179,8 +177,6 @@ module.exports = {
                 error: error });
         });
     },
-
-
     updatebooksUser: (req,res)=>{
         let deCoded_id = req.decode.id;
         const {id} = req.params;
