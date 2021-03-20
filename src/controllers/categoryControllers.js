@@ -26,7 +26,7 @@ module.exports = {
         const { body } = req;
         const newData = {
           ...body,
-          
+          foto:req.file.path
         };
         
         prisma.kategori.create({
@@ -56,7 +56,7 @@ module.exports = {
         const { body } = req;
         const newData = {
             ...body,
-             
+            foto:req.file.path
         };
        
         prisma.kategori.update({
